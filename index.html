@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Birthday Cal</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300|Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="app">
+
+        <h1 class="app__header">Birthday Cal</h1>
+
+        <div class="app__content">
+
+            <!--            <div class="intro ">
+                            <div class="intro__task">
+                                <p>
+                                    <strong>Birthday Cal</strong> is a week long calendar!
+                                </p>
+                                <p>
+                                    Render a card for each day of the week.
+                                    For a given <em>year</em>, figure out whose birthday belongs to which card.
+                                    Place people's initials in the card according to these rules -
+                                </p>
+                                <p>
+                                <ul>
+                                    <li>Each person must always be rendered as square</li>
+                                    <li>Use person's initials to label birthdays</li>
+                                    <li>Order people inside the card based on their age (youngest to oldest)</li>
+                                    <li>Each square in a card must be of equal size and should fill up as much space in the card as possible</li>
+                                </ul>
+                                </p>
+                                <p>
+                                    <strong>Examples &dash;</strong>
+                                    <img class="intro__example" src="img/display-rules.png" />
+                                </p>
+                            </div>
+                            <div class="intro__helpers">
+                                <p>
+                                    <strong>Submitting your work &dash;</strong>
+                                <ul>
+                                    <li>
+                                        Your submission should be functional within this page - see <a href="#work-area">work area</a>.
+                                    </li>
+                                    <li>
+                                        Write your code in pure JS.
+                                    </li>
+                                    <li>
+                                        Use <code>day--empty</code> class on <code>.cal__day</code> to render empty calendar dates. Use <code>.day__person</code> to render birthdays. See source.
+                                    </li>
+                                    <li>
+                                        Submit back the completed task as a compressed zip of this git repo with your commits on top. Feel free to share over Dropbox / Email.
+                                    </li>
+                                </ul>
+                                </p>
+                                <p>
+                                    <strong>Evaluation criteria &dash;</strong>
+                                <ul>
+                                    <li>functionality coverage</li>
+                                    <li>readable and efficient code</li>
+                                    <li>should handle edge cases</li>
+                                    <li>maintainability</li>
+                                </ul>
+                                </p>
+            
+                            </div>
+                        </div>-->
+
+            <hr class="border-line app__border" />
+
+            <div id="work-area" ng-app="calApp" ng-controller="calCtrl" data-ng-init="init()">
+                <h1 class="cal__title">Game Of Cards</h1>
+                <ul class="calendar clearfix js-calendar">
+                    <li class="cal__day {{ day.className}}" ng-repeat="day in weekDays" data-day="{{ day.day }}">
+                        <div class="day__date"></div>
+                        <div class="day__people">
+                            <div class="day__person" ng-repeat="val in day.initials" title="{{ val.name + ' ' +val.birthday.getFullYear() }}">{{ val.initials }}</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="app__inputs">
+                    <form name="myForm">
+                        <div class="app__actions">
+                            <label>Enter Name</label>
+                            <input class="app__input" type="text" placeholder="Enter name" ng-model="characterName" />
+                            <label>Enter DOB</label>
+                            <input class="app__input" type="date" ng-model="characterBirthday" />
+                            <a class="app__button js-update" ng-click="addCharacter()">Add Character</a>
+                        </div>
+                        <div class="app__actions">
+                            <label>Add a New Year</label>
+                            <input class="app__input js-year" type="number" name="inputYear" ng-model="inputYear" ng-minlength="number"  ng-maxlength="number" ng-change="setCards()" placeholder="Enter a year" />
+                            <!--<a class="app__button js-update">Update</a>-->
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <hr class="border-line app__border" />
+
+        </div>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/main.js"></script>   
+</body>
+</html>

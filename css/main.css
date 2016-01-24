@@ -1,0 +1,309 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*  _            _    _                     _  */
+/* | |__ _  _ __| |__| |__ _ _  _   __ __ _| | */
+/* | '_ \ || / _` / _` / _` | || | / _/ _` | | */
+/* |_.__/\_,_\__,_\__,_\__,_|\_, | \__\__,_|_| */
+/*                           |__/              */
+
+
+/* ==========================================================================
+   Base styles for task
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+    background: #eaf0f2;
+    background: #27303a;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+    width: 1024px;
+    margin: 0 auto;
+    background: #eaf0f2;
+}
+
+.app__content {
+    padding: 24px 38px 120px;
+    color: #5b6a76;
+    overflow: auto;
+}
+
+.app__header {
+    margin: 0;
+    padding: 24px 38px;
+    background: #1789ec;
+    color: #ffffff;
+    font-weight: 300;
+
+}
+
+.intro {
+    display: -webkit-flex;
+    display: flex;
+    font-size: 14px;
+}
+
+.intro__task {
+    -webkit-flex: 5;
+    flex: 5;
+    margin: 24px;
+    padding: 12px 24px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.intro__example {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.intro__helpers {
+    margin-top: 24px;
+    -webkit-flex: 2;
+    flex: 2;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.intro__helpers li {
+    margin-bottom: 24px;
+}
+
+.app__border {
+    max-width: 80%;
+}
+
+.cal__title {
+    margin: 0 0 48px;
+    padding-top: 54px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.calendar {
+    padding: 0 12px;
+    list-style-type: none;
+    margin-bottom: 36px;
+}
+
+.cal__day {
+    position: relative;
+    float: left;
+    width: 122px;
+    margin: 0 5px;
+    background: #ffffff;
+}
+
+.cal__day:before {
+    position: absolute;
+    content: attr(data-day);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    top: 10px;
+    right: 12px;
+}
+
+.day--empty {
+    background: #dee4e6;
+}
+
+.day--empty:after {
+    content: "\02368";
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    opacity: 0.5;
+    text-align: center;
+    font-size: 80px;
+}
+
+.day__date {
+    background: #aba0ec;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+    font-size: 12px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 12px;
+    border-radius: 3px 3px 0 0;
+}
+
+.day__people {
+    height: 120px;
+    border: 1px solid #ccd1d3;
+    border-top: none;
+}
+
+.day__person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    font-size: 14px;
+    font-weight: 600;
+    float: left;
+}
+.four .day__person{
+    width:50%;
+    height: 50%;
+}
+.nine .day__person{
+    width:40px;
+    height: 40px;
+}
+.sixteen .day__person{
+    width:25%;
+    height: 25%;
+}
+
+.day__person:nth-of-type(9n + 1) {
+    background: #555e7a;
+}
+.day__person:nth-of-type(9n + 2) {
+    background: #a0d203;
+}
+.day__person:nth-of-type(9n + 3) {
+    background: #c87e99;
+}
+.day__person:nth-of-type(9n + 4) {
+    background: #7ccae3;
+}
+.day__person:nth-of-type(9n + 5) {
+    background: #e64a33;
+}
+.day__person:nth-of-type(9n + 6) {
+    background: #0359cd;
+}
+.day__person:nth-of-type(9n + 7) {
+    background: #ff29a9;
+}
+.day__person:nth-of-type(9n + 8) {
+    background: #28cdfc;
+}
+.day__person:nth-of-type(9n + 9) {
+    background: #ff9a04;
+}
+
+.app__inputs {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.app__txt, .app__input {
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid #ccd1d3;
+    border-radius: 3px;
+}
+
+.app__txt {
+    -webkit-flex: 3;
+    flex: 3;
+    font-size: 12px;
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid #ccd1d3;
+    border-radius: 3px;
+    margin: 0 16px;
+    padding: 12px;
+    width: 60%;
+    height: 300px;
+}
+
+.app__actions {
+    -webkit-flex: 2;
+    flex: 2;
+    margin-left: 10px;
+    float: left;
+    width: 48%;
+}
+.app__actions + .app__actions{
+    float: right;
+}
+form{
+    width: 100%;
+}
+.app__input {
+    display: block;
+    padding: 0 12px;
+    line-height: 48px;
+    font-size: 18px;
+    margin: 0 0 36px;
+}
+
+.app__button {
+    display: inline-block;
+    padding: 0 36px;
+    color: rgba(255,255,255,0.8);
+    background: #1789ec;
+    border-bottom: 2px solid #0c77ca;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.app__button:hover {
+    color: rgba(255,255,255, 1.0);
+    background: #0ea0f0;
+}
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.border-line {
+    height: 1px;
+    border: none;
+    margin: 36px auto;
+    background: -moz-linear-gradient(left, rgba(117,136,151,0) 0%, rgba(117,136,151,1) 50%, rgba(117,136,151,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(117,136,151,0)), color-stop(50%, rgba(117,136,151,0.3)), color-stop(100%, rgba(117,136,151,0)));
+    background: -webkit-linear-gradient(left, rgba(117,136,151,0) 0%, rgba(117,136,151,0.3) 50%, rgba(117,136,151,0) 100%);
+    background: -o-linear-gradient(left, rgba(117,136,151,0) 0%, rgba(117,136,151,0.3) 50%, rgba(117,136,151,0) 100%);
+    background: -ms-linear-gradient(left, rgba(117,136,151,0) 0%, rgba(117,136,151,0.3) 50%, rgba(117,136,151,0) 100%);
+    background: linear-gradient(to right, rgba(117,136,151,0) 0%, rgba(117,136,151,0.3) 50%, rgba(117,136,151,0) 100%);
+}
+
+code, pre {
+    font-size: 12px;
+    font-family: 'Source Code Pro', monospace;
+    background: #f5fafc;
+    padding: 1px 6px;
+}
