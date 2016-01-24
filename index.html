@@ -89,7 +89,8 @@
                             <label>Enter Name</label>
                             <input class="app__input" type="text" placeholder="Enter name" ng-model="characterName" />
                             <label>Enter DOB</label>
-                            <input class="app__input" type="date" ng-model="characterBirthday" />
+                            <!--date obj will work in chrome-->
+                            <input class="app__input" type="date" ng-model="characterBirthday" placeholder="mm/dd/yyyy" />
                             <a class="app__button js-update" ng-click="addCharacter()">Add Character</a>
                         </div>
                         <div class="app__actions">

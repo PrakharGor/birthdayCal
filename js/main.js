@@ -152,7 +152,7 @@ app.controller('calCtrl', function($scope) {
         if (this.characterName !== "" && this.characterBirthday)
         {
             var newChar = {'name': this.characterName, 'birthday': this.characterBirthday};
-            newChar.initials = getInitials(newChar.name);
+            newChar.initials = getInitials(newChar.name);            
             newChar.day = getDayForGivenYear(newChar.birthday);
 //            push object in jsonInput
             $scope.jsonInput.push(newChar);

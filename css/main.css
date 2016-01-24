@@ -237,6 +237,16 @@ body {
 .app__actions + .app__actions{
     float: right;
 }
+/****Patch for ff - date type issue******/
+@-moz-document url-prefix() { 
+    .app__actions {
+    display: none;
+}
+.app__actions + .app__actions{
+    display: block;
+    float: left;
+}
+}
 form{
     width: 100%;
 }
